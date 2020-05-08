@@ -6,7 +6,7 @@
 name: CI
 
 on:
-  push:
+  pull_request:
     branches:
     - bugfix-2.0.x
     - artillery-genius
@@ -26,19 +26,59 @@ jobs:
         test-platform:
         # Base Environments
 
-        - DUE
-        - esp32
-        - linux_native
+        # - DUE
+        # - esp32
+        # - linux_native
         - mega2560
-        - teensy31
-        - teensy35
-        - SAMD51_grandcentral_m4
+        # - teensy31
+        # - teensy35
+        # - SAMD51_grandcentral_m4
 
         # Extended AVR Environments
 
+        # - FYSETC_F6_13
         - mega1280
-        - mega2560
-        
+        # - rambo
+        # - sanguino1284p
+        # - sanguino644p
+
+        # Extended STM32 Environments
+
+        # - STM32F103RC_btt
+        # - STM32F103RC_btt_USB
+        # - STM32F103RE_btt
+        # - STM32F103RE_btt_USB
+        # - STM32F103RC_fysetc
+        # - jgaurora_a5s_a1
+        # - STM32F103VE_longer
+        # - STM32F407VE_black
+        # - BIGTREE_SKR_PRO
+        # - BIGTREE_GTR_V1_0
+        # - mks_robin
+        # - ARMED
+        # - FYSETC_S6
+        # - malyan_M300
+        # - mks_robin_lite
+
+        # Put lengthy tests last
+
+        # - LPC1768
+        # - LPC1769
+
+        # STM32 with non-STM framework. both broken for now. they should use HAL_STM32 which is working.
+
+        #- STM32F4
+        #- STM32F7
+
+        # Non-working environment tests
+
+        #- BIGTREE_BTT002
+        #- at90usb1286_cdc
+        #- at90usb1286_dfu
+        #- STM32F103CB_malyan
+        #- mks_robin_mini
+        #- mks_robin_nano
+
     steps:
 
     - name: Select Python 3.7
