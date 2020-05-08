@@ -9,7 +9,7 @@ on:
   push:
     branches:
     - bugfix-2.0.x
-    - artiller-genius
+    - artillery-genius
     paths-ignore:
     - config/**
     - data/**
