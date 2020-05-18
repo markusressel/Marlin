@@ -1,6 +1,6 @@
 #
-# test-builds.yml
-# Do test builds to catch compile errors
+# build-firmware.yml
+# Builds a firmware image ready to flash
 #
 
 name: Build Firmware
@@ -45,3 +45,9 @@ jobs:
       with:
         name: firmware
         path: .pio/build/mega2560/firmware.hex
+    
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: firmware
+        path: .pio/build/mega1280/firmware.hex
